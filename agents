@@ -1,0 +1,68 @@
+from .agent import Agent, set_default_openai_key
+from .runner import Runner
+from .tools import function_tool
+
+class Agent:
+    def __init__(self, name, instructions, tools=None):
+        self.name = name
+        self.instructions = instructions
+        self.tools = tools or []
+
+_default_api_key = None
+
+def set_default_openai_key(key):
+    global _default_api_key
+    _default_api_key = key
+
+class Agent:
+    def __init__(self, name, instructions, tools=None):
+        self.name = name
+        self.instructions = instructions
+        self.tools = tools or []
+
+_default_api_key = None
+
+def set_default_openai_key(key):
+    global _default_api_key
+    _default_api_key = key
+
+def function_tool(func):
+    """
+    Decorador simple para indicar que una función es herramienta.
+    """
+    func.is_tool = True
+    return func
+
+import inspect
+
+class Runner:
+    @staticmethod
+    async def run(agent, input, conversation_id=None):
+        """
+        Ejecuta un agente y sus herramientas registradas.
+        """
+        # Revisar herramientas registradas
+        for tool in agent.tools:
+            if hasattr(tool, "is_tool") and tool.is_tool:
+                try:
+                    params = inspect.signature(tool).parameters
+
+                    # Ver si usa conversation_text
+                    if "conversation_text" in params:
+                        result = tool(conversation_text=input)
+                        return SimpleResult(result)
+
+                    # Ver si usa query
+                    elif "query" in params:
+                        result = tool(query=input)
+                        return SimpleResult(result)
+
+                except Exception as e:
+                    return SimpleResult(f"Error ejecutando herramienta: {e}")
+
+        # Si no aplica ninguna herramienta
+        return SimpleResult("No entendí lo que dijiste, intenta otra pregunta.")
+
+class SimpleResult:
+    def __init__(self, output):
+        self.final_output = output
