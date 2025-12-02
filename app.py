@@ -130,12 +130,14 @@ if user_input:
 
     result = asyncio.run(run_agent())
     respuesta = result.final_output
-    st.markdown("<div style='color: gray; font-style: italic;'> escribiendo...</div>", unsafe_allow_html=True)
+   
   
     st.session_state.messages.append({"role": "assistant", "content": respuesta})
 
     with st.chat_message("assistant"):
+        st.markdown("<div style='color: gray; font-style: italic;'> escribiendo...</div>", unsafe_allow_html=True)
         st.write(respuesta)
+
 
 
 
