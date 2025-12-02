@@ -9,12 +9,7 @@ from openai import OpenAI
 from agents import Agent, Runner, function_tool, set_default_openai_key
 
 
-# ======================================================
-# 🔑 API KEY SOLO DESDE STREAMLIT CLOUD (VERSIÓN FINAL)
-# ======================================================
-# Solo funciona cuando el proyecto está conectado a GitHub.
-# La API Key vive en Streamlit (Settings → Secrets)
-# GitHub NO tiene tu API Key. 100% seguro.
+
 
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 VECTOR_STORE_ID = "vs_6913baba995c81918b7f38c033955571"
@@ -23,9 +18,8 @@ set_default_openai_key(OPENAI_API_KEY)
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 
-# ======================================================
-# 🧩 TU CÓDIGO ORIGINAL (SIN CAMBIOS)
-# ======================================================
+
+
 
 class WordAnalysis(BaseModel):
     word: str = Field(description="La palabra más repetida en la conversación")
@@ -89,9 +83,8 @@ agent = Agent(
 )
 
 
-# ======================================================
-# 🎨 INTERFAZ DE STREAMLIT (SIN AFECTAR TU LÓGICA)
-# ======================================================
+
+
 
 st.title("🎓 Chat Universidad Panamericana")
 st.write("Haz tus preguntas sobre la UP (historia, carreras, admisiones, etc.)")
@@ -112,8 +105,8 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
 
 
-# Entrada visual del usuario
-user_input = st.chat_input("Escribe tu mensaje...")
+
+user_input = st.chat_input("Hola,Escribe tu mensaje...")
 
 if user_input:
 
@@ -123,7 +116,7 @@ if user_input:
     with st.chat_message("user"):
         st.write(user_input)
 
-    # Ejecutar tu agente ORIGINAL sin modificarlo
+  
     async def run_agent():
         return await Runner.run(
             agent,
@@ -134,8 +127,9 @@ if user_input:
     result = asyncio.run(run_agent())
     respuesta = result.final_output
 
-    # Mostrar respuesta
+  
     st.session_state.messages.append({"role": "assistant", "content": respuesta})
 
     with st.chat_message("assistant"):
         st.write(respuesta)
+
