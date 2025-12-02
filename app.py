@@ -108,7 +108,7 @@ for msg in st.session_state.messages:
 
 
 
-user_input = st.chat_input("Hola, escribe tu mensaje...")
+user_input = st.chat_input("inicia conversación con Ubot")
 
 if user_input:
 
