@@ -85,10 +85,6 @@ agent = Agent(
 
 
 
-col1, col2 = st.columns([1, 5])
-
-with col1:
-    st.image("https://media.licdn.com/dms/image/v2/C5616AQG9Z-xIcw79jw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1645914100999?e=2147483647&v=beta&t=TG-t4OhAbpqyFq7vrJ4dOouEXlRD4_VhVG2uazwkI6w", width=150)
 
 
 st.title("🎓 Chat Universidad Panamericana")
@@ -139,6 +135,7 @@ if user_input:
 
     with st.chat_message("assistant"):
         st.write(respuesta)
+
 
 
 
