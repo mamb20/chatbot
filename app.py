@@ -87,7 +87,7 @@ agent = Agent(
 
 
 
-st.title("🎓 Chat Universidad Panamericana")
+st.title(" Chat Universidad Panamericana")
 
 
 # Conversación de OpenAI (persistente)
@@ -140,6 +140,7 @@ if user_input:
 
 
   
+
 
 
 
