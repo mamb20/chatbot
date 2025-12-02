@@ -108,7 +108,7 @@ for msg in st.session_state.messages:
 
 
 user_input = st.chat_input("inicia conversación con Ubot")
-st.markdown("<div style='color: gray; font-style: italic;'> escribiendo...</div>", unsafe_allow_html=True)
+
 
 
 if user_input:
@@ -126,6 +126,7 @@ if user_input:
             input=user_input,
             conversation_id=st.session_state.conversation_id
         )
+        st.markdown("<div style='color: gray; font-style: italic;'> escribiendo...</div>", unsafe_allow_html=True)
 
     result = asyncio.run(run_agent())
     respuesta = result.final_output
@@ -135,6 +136,7 @@ if user_input:
 
     with st.chat_message("assistant"):
         st.write(respuesta)
+
 
 
 
