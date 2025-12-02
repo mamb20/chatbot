@@ -139,13 +139,11 @@ if user_input:
         st.write(respuesta)
 
 
-    st.sidebar.image("foto.png", width=150)
+    st.sidebar.image("https://universidadesdemexico.mx/logos/original/logo-universidad-panamericana.webp", width=150)
 
 st.sidebar.markdown("---")
 
-modo = st.sidebar.selectbox("Modo del chatbot:", ["Normal", "Experto", "Profesor"])
 
-st.sidebar.markdown("---")
 
 if st.sidebar.button("🗑️ Borrar conversación"):
     st.session_state.chat = []
@@ -153,6 +151,7 @@ if st.sidebar.button("🗑️ Borrar conversación"):
 st.sidebar.markdown("---")
 
 modo_oscuro = st.sidebar.toggle("🌙 Modo oscuro")
+
 
 
 
