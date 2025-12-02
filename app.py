@@ -172,7 +172,8 @@ if modo_oscuro:
         input[type="text"] { background-color: #1c1c1c !important; color: white !important; border: 1px solid #444 !important; }
     </style>
     """, unsafe_allow_html=True)
-el
+
+
 
 
 
