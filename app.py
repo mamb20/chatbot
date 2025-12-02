@@ -145,12 +145,6 @@ st.sidebar.markdown("---")
 
 
 
-if st.sidebar.button("🗑️ Borrar conversación"):
-    st.session_state.chat = []
-
-st.sidebar.markdown("---")
-
-import streamlit as st
 
 # ============================
 #   BOTÓN BORRAR CHAT
@@ -179,6 +173,7 @@ if modo_oscuro:
     </style>
     """, unsafe_allow_html=True)
 el
+
 
 
 
