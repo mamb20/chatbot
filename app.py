@@ -88,7 +88,6 @@ agent = Agent(
 
 
 st.title("🎓 Chat Universidad Panamericana")
-st.write("inicia conversación con Ubot")
 
 
 # Conversación de OpenAI (persistente)
@@ -114,8 +113,7 @@ if user_input:
 
     # Guardar mensaje del usuario en historial
     st.session_state.messages.append({"role": "user", "content": user_input})
-    st.image("up_logo.png", width=120)
-
+   
     with st.chat_message("user"):
         st.write(user_input)
 
@@ -135,6 +133,7 @@ if user_input:
 
     with st.chat_message("assistant"):
         st.write(respuesta)
+
 
 
 
