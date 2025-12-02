@@ -87,7 +87,7 @@ agent = Agent(
 
 
 st.title("🎓 Chat Universidad Panamericana")
-st.write("Haz tus preguntas sobre la UP (historia, carreras, admisiones, etc.)")
+st.write("inicia conversación con Ubot")
 
 # Conversación de OpenAI (persistente)
 if "conversation_id" not in st.session_state:
@@ -106,7 +106,7 @@ for msg in st.session_state.messages:
 
 
 
-user_input = st.chat_input("Hola,Escribe tu mensaje...")
+user_input = st.chat_input("Hola, escribe tu mensaje...")
 
 if user_input:
 
@@ -132,4 +132,5 @@ if user_input:
 
     with st.chat_message("assistant"):
         st.write(respuesta)
+
 
