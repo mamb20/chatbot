@@ -133,10 +133,12 @@ if user_input:
    
   
     st.session_state.messages.append({"role": "assistant", "content": respuesta})
+    st.markdown("<div style='color: gray; font-style: italic;'> escribiendo...</div>", unsafe_allow_html=True)
 
     with st.chat_message("assistant"):
-        st.markdown("<div style='color: gray; font-style: italic;'> escribiendo...</div>", unsafe_allow_html=True)
+        
         st.write(respuesta)
+
 
 
 
