@@ -85,9 +85,11 @@ agent = Agent(
 
 
 
+st.image("https://media.licdn.com/dms/image/v2/C5616AQG9Z-xIcw79jw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1645914100999?e=2147483647&v=beta&t=TG-t4OhAbpqyFq7vrJ4dOouEXlRD4_VhVG2uazwkI6w", width=150)
 
 st.title("🎓 Chat Universidad Panamericana")
 st.write("inicia conversación con Ubot")
+
 
 # Conversación de OpenAI (persistente)
 if "conversation_id" not in st.session_state:
@@ -112,6 +114,7 @@ if user_input:
 
     # Guardar mensaje del usuario en historial
     st.session_state.messages.append({"role": "user", "content": user_input})
+    st.image("up_logo.png", width=120)
 
     with st.chat_message("user"):
         st.write(user_input)
@@ -132,5 +135,6 @@ if user_input:
 
     with st.chat_message("assistant"):
         st.write(respuesta)
+
 
 
