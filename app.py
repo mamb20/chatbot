@@ -139,18 +139,9 @@ if user_input:
         st.write(respuesta)
 
 
-    st.sidebar.image("https://universidadesdemexico.mx/logos/original/logo-universidad-panamericana.webp", width=150)
-
-st.sidebar.markdown("---")
+    st.sidebar.image("https://universidadesdemexico.mx/logos/original/logo-universidad-panamericana.webp", width=170)
 
 
-
-
-# ============================
-#   BOTÓN BORRAR CHAT
-# ============================
-if st.sidebar.button("🗑️ Borrar conversación"):
-    st.session_state.chat = []
 
 st.sidebar.markdown("---")
 
@@ -172,6 +163,7 @@ if modo_oscuro:
         input[type="text"] { background-color: #1c1c1c !important; color: white !important; border: 1px solid #444 !important; }
     </style>
     """, unsafe_allow_html=True)
+
 
 
 
