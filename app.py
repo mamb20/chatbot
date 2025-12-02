@@ -150,7 +150,37 @@ if st.sidebar.button("🗑️ Borrar conversación"):
 
 st.sidebar.markdown("---")
 
+import streamlit as st
+
+# ============================
+#   BOTÓN BORRAR CHAT
+# ============================
+if st.sidebar.button("🗑️ Borrar conversación"):
+    st.session_state.chat = []
+
+st.sidebar.markdown("---")
+
+# ============================
+#   TOGGLE DE MODO OSCURO
+# ============================
 modo_oscuro = st.sidebar.toggle("🌙 Modo oscuro")
+
+# ============================
+#   CSS SEGÚN EL MODO
+# ============================
+if modo_oscuro:
+    st.markdown("""
+    <style>
+        .stApp { background-color: #0f0f0f !important; color: white !important; }
+        .chat-box { background-color: #1c1c1c !important; border: 1px solid #333 !important; }
+        .user-msg { background-color: #2a4d29 !important; color: white !important; }
+        .bot-msg { background-color: #262626 !important; border: 1px solid #555 !important; color: #e8e8e8 !important; }
+        input[type="text"] { background-color: #1c1c1c !important; color: white !important; border: 1px solid #444 !important; }
+    </style>
+    """, unsafe_allow_html=True)
+el
+
+
 
 
 
