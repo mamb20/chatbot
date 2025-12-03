@@ -160,7 +160,7 @@ if "modo_oscuro" not in st.session_state:
 # ============================
 # BARRA LATERAL
 # ============================
-
+with st.sidebar:
     # Botón para ACTIVAR MODO CLARO
     if st.button("☀️ Modo Claro"):
         st.session_state.modo_oscuro = False
@@ -175,6 +175,7 @@ if "modo_oscuro" not in st.session_state:
     st.write(f"Modo actual: **{'Oscuro' if st.session_state.modo_oscuro else 'Claro'}**")
 
     
+
 
 
 
