@@ -149,10 +149,11 @@ with st.sidebar:
     st.markdown("---")
     
     st.write("- Desarrollado por Miguel")
-     st.markdown("---")
+    st.write("proyecto final de Programación Orientada a Objetos")
 
 
     
+
 
 
 
