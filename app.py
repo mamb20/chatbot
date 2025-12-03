@@ -141,26 +141,14 @@ if user_input:
 
 import streamlit as st
 
-# ------------------------
-# BARRA LATERAL
-# ------------------------
-
 with st.sidebar:
-    
-
-    st.markdown("### Desarrollado por Miguel")
+    st.image("https://apseguridad.com/wp-content/uploads/2007/01/escudo_CH001.jpg", width=150)
     st.markdown("---")
-
-    if st.button("🗑️ Borrar conversación"):
-        st.session_state.chat = []
-        st.rerun()
-
-    st.markdown("---")
-    st.write("Este botón borra todos los mensajes.")
-
-
-
     
+    st.write(" Desarrollado por Miguel")
+    st.write("-proyecto final de Programación Orientada a Objetos")
+
+
 
 
 
