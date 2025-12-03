@@ -148,39 +148,11 @@ with st.sidebar:
     st.image("https://apseguridad.com/wp-content/uploads/2007/01/escudo_CH001.jpg", width=150)
 
     st.title("Menú lateral")
-    
-
-   if st.session_state.modo_oscuro:
-    # ---------- MODO OSCURO ----------
-    st.markdown("""
-    <style>
-        .stApp { background-color: #0f0f0f !important; color: white !important; }
-        .chat-box { background-color: #1c1c1c !important; border: 1px solid #333 !important; }
-        .user-msg { background-color: #2a4d29 !important; color: white !important; }
-        .bot-msg { background-color: #262626 !important; border: 1px solid #555 !important; color: #e8e8e8 !important; }
-        input[type="text"] { background-color: #1c1c1c !important; color: white !important; border: 1px solid #444 !important; }
-    </style>
-    """, unsafe_allow_html=True)
-else:
-    # ---------- MODO CLARO ----------
-    st.markdown("""
-    <style>
-        .stApp { background-color: #f5f5f5 !important; color: black !important; }
-        .chat-box { background-color: #ffffff !important; border-radius: 12px; border: 1px solid #eee !important; }
-        .user-msg { background-color: #DCF8C6 !important; color: black !important; }
-        .bot-msg { background-color: #ffffff !important; border: 1px solid #ddd !important; color: black !important; }
-        input[type="text"] { background-color: white !important; color: black !important; border: 1px solid #ccc !important; }
-    </style>
-    """, unsafe_allow_html=True)
-
-    st.markdown("---")
-
-    st.subheader("Información extra")
-    st.write("Proyecto final de Programación orientada a objetos.")
 
     st.write("- Desarrollado por Miguel")
 
     st.markdown("---")
+
 
 
 
