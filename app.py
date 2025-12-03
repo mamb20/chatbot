@@ -139,7 +139,23 @@ if user_input:
         st.write(respuesta)
 
 
+st.sidebar.title("Menú")
+
+if st.sidebar.button("🏠 Inicio"):
+    seleccion = "Inicio"
+
+if st.sidebar.button("💬 Chat"):
+    seleccion = "Chat"
+
+if st.sidebar.button("⚙️ Configuración"):
+    seleccion = "Config"
+
+if st.sidebar.button("ℹ️ Acerca de"):
+    seleccion = "Info"
+
+
   
+
 
 
 
