@@ -141,56 +141,27 @@ if user_input:
 
 import streamlit as st
 
-# -----------------------
-# 1. Variable de selección
-# -----------------------
-if "seleccion" not in st.session_state:
-    st.session_state.seleccion = "Inicio"
+# ------------------------
+# BARRA LATERAL
+# ------------------------
+with st.sidebar:
+    st.image("https://apseguridad.com/wp-content/uploads/2007/01/escudo_CH001.jpg", width=150)
 
-# -----------------------
-# 2. Barra lateral (menú)
-# -----------------------
-st.sidebar.title("Menú")
+    st.title("Menú lateral")
+    
+    st.subheader("Ajustes")
+    borrar = st.button("🗑️ Borrar conversación")
 
-if st.sidebar.button("🏠 Inicio"):
-    st.session_state.seleccion = "Inicio"
+    modo_oscuro = st.toggle("🌙 Modo oscuro")
 
-if st.sidebar.button("💬 Chat"):
-    st.session_state.seleccion = "Chat"
+    st.markdown("---")
 
-if st.sidebar.button("⚙️ Configuración"):
-    st.session_state.seleccion = "Configuración"
+    st.subheader("Información extra")
+    st.write("Puedes poner cualquier texto aquí.")
 
-if st.sidebar.button("ℹ️ Acerca de"):
-    st.session_state.seleccion = "Acerca de"
+    st.write("- Desarrollado por Miguel")
 
-# -----------------------
-# 3. Contenido según menú
-# -----------------------
-if st.session_state.seleccion == "Inicio":
-    st.title("🏠 Inicio")
-    st.write("Bienvenido a la página principal.")
-
-elif st.session_state.seleccion == "Chat":
-    st.title("💬 Chat")
-    st.write("Aquí iría tu chatbot.")
-
-elif st.session_state.seleccion == "Configuración":
-    st.title("⚙️ Configuración")
-    st.write("Aquí puedes poner ajustes de tu app.")
-
-elif st.session_state.seleccion == "Acerca de":
-    st.title("ℹ️ Acerca de")
-    st.write("Información de la aplicación.")
-
-
-
-  
-
-
-
-
-
+    st.markdown("---")
 
 
 
