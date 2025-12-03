@@ -169,12 +169,13 @@ with st.sidebar:
     # Botón para ACTIVAR MODO OSCURO
     if st.button("🌙 Modo Oscuro"):
         st.session_state.modo_oscuro = True
-        st.experimental_rerun()
+        st.rerun()
 
     st.markdown("---")
     st.write(f"Modo actual: **{'Oscuro' if st.session_state.modo_oscuro else 'Claro'}**")
 
     
+
 
 
 
