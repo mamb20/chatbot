@@ -146,10 +146,12 @@ import streamlit as st
 # ------------------------
 with st.sidebar:
     st.image("https://apseguridad.com/wp-content/uploads/2007/01/escudo_CH001.jpg", width=150)
-
+    st.markdown("---")
+    
     st.write("- Desarrollado por Miguel")
 
-    st.markdown("---")
+    
+
 
 
 
