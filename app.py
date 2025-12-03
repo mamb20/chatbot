@@ -90,17 +90,17 @@ agent = Agent(
 st.title(" Chat Universidad Panamericana")
 
 
-# Conversación de OpenAI (persistente)
+
 if "conversation_id" not in st.session_state:
     conv = client.conversations.create()
     st.session_state.conversation_id = conv.id
 
-# Historial visual
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 
-# Mostrar historial en formato tipo chat
+
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
@@ -142,6 +142,7 @@ with st.sidebar:
     
     st.write(" Desarrollado por Miguel")
     st.write("-proyecto final de Programación Orientada a Objetos")
+
 
 
 
