@@ -149,8 +149,33 @@ with st.sidebar:
     st.markdown("---")
     
     st.write("- Desarrollado por Miguel")
+import streamlit as st
+
+# ============================
+# INICIALIZAR EL ESTADO
+# ============================
+if "modo_oscuro" not in st.session_state:
+    st.session_state.modo_oscuro = False   # inicia en modo claro
+
+# ============================
+# BARRA LATERAL
+# ============================
+
+    # Botón para ACTIVAR MODO CLARO
+    if st.button("☀️ Modo Claro"):
+        st.session_state.modo_oscuro = False
+        st.experimental_rerun()
+
+    # Botón para ACTIVAR MODO OSCURO
+    if st.button("🌙 Modo Oscuro"):
+        st.session_state.modo_oscuro = True
+        st.experimental_rerun()
+
+    st.markdown("---")
+    st.write(f"Modo actual: **{'Oscuro' if st.session_state.modo_oscuro else 'Claro'}**")
 
     
+
 
 
 
