@@ -149,19 +149,22 @@ with st.sidebar:
 
     st.title("Menú lateral")
     
-    st.subheader("Ajustes")
-    borrar = st.button("🗑️ Borrar conversación")
+  if st.sidebar.button("🗑️ Borrar conversación"):
+    st.session_state.chat = []   # Borra todo
+    st.experimental_rerun()      # Refresca la app
+
 
     modo_oscuro = st.toggle("🌙 Modo oscuro")
 
     st.markdown("---")
 
     st.subheader("Información extra")
-    st.write("Puedes poner cualquier texto aquí.")
+    st.write("Proyecto final de Programación orientada a objetos.")
 
     st.write("- Desarrollado por Miguel")
 
     st.markdown("---")
+
 
 
 
