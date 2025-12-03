@@ -113,8 +113,8 @@ user_input = st.chat_input("inicia conversación con Ubot")
 
 if user_input:
 
-    # Guardar mensaje del usuario en historial
-    st.session_state.messages.append({"role": "user", "content": user_input})
+   
+    
    
     with st.chat_message("user"):
         st.write(user_input)
@@ -147,6 +147,7 @@ with st.sidebar:
     
     st.write(" Desarrollado por Miguel")
     st.write("-proyecto final de Programación Orientada a Objetos")
+
 
 
 
