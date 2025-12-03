@@ -112,10 +112,6 @@ user_input = st.chat_input("inicia conversación con Ubot")
 
 
 if user_input:
-
-   
-    
-   
     with st.chat_message("user"):
         st.write(user_input)
 
@@ -137,8 +133,7 @@ if user_input:
     with st.chat_message("assistant"):
         
         st.write(respuesta)
-
-
+        
 import streamlit as st
 
 with st.sidebar:
@@ -147,6 +142,7 @@ with st.sidebar:
     
     st.write(" Desarrollado por Miguel")
     st.write("-proyecto final de Programación Orientada a Objetos")
+
 
 
 
