@@ -139,22 +139,54 @@ if user_input:
         st.write(respuesta)
 
 
+import streamlit as st
+
+# -----------------------
+# 1. Variable de selección
+# -----------------------
+if "seleccion" not in st.session_state:
+    st.session_state.seleccion = "Inicio"
+
+# -----------------------
+# 2. Barra lateral (menú)
+# -----------------------
 st.sidebar.title("Menú")
 
 if st.sidebar.button("🏠 Inicio"):
-    seleccion = "Inicio"
+    st.session_state.seleccion = "Inicio"
 
 if st.sidebar.button("💬 Chat"):
-    seleccion = "Chat"
+    st.session_state.seleccion = "Chat"
 
 if st.sidebar.button("⚙️ Configuración"):
-    seleccion = "Config"
+    st.session_state.seleccion = "Configuración"
 
 if st.sidebar.button("ℹ️ Acerca de"):
-    seleccion = "Info"
+    st.session_state.seleccion = "Acerca de"
+
+# -----------------------
+# 3. Contenido según menú
+# -----------------------
+if st.session_state.seleccion == "Inicio":
+    st.title("🏠 Inicio")
+    st.write("Bienvenido a la página principal.")
+
+elif st.session_state.seleccion == "Chat":
+    st.title("💬 Chat")
+    st.write("Aquí iría tu chatbot.")
+
+elif st.session_state.seleccion == "Configuración":
+    st.title("⚙️ Configuración")
+    st.write("Aquí puedes poner ajustes de tu app.")
+
+elif st.session_state.seleccion == "Acerca de":
+    st.title("ℹ️ Acerca de")
+    st.write("Información de la aplicación.")
+
 
 
   
+
 
 
 
